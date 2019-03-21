@@ -16,7 +16,7 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(express.json());
 
 // MOUNTING ROUTES TO API PATH
-server.use('/api', routes);
+server.use(routes);
 
 // PORT
 const port = process.env.PORT;
