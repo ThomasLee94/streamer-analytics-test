@@ -38,10 +38,42 @@ const randomTier = () => {
   return tier[randomIndex];  
 };
 
+const createDummyDataJSON = () => {
+  const randomNum = randInt(0,20);
+  const output = [];
+  for (let i = 0; i < randomNum; i += 1){
+    output.push(
+      {
+      "broadcaster_id": randomId(),
+      "broadcaster_name": randomChar(),
+      "is_gift": randomBoolean(),
+      "tier": randomTier(),
+      "plan_name": randomChar(),
+      "user_id": randomId(),
+      "user_name": randomChar(),
+      "user_id": randomId(),
+      "user_name": randomChar()
+    }
+    )
+  }
+};
+
+const createDummyObj = (obj) => {
+  const output = {
+    "data": [obj],
+    "pagination": {
+      "token": randomId
+    }
+  }
+
+}
+
 
 export randomInt;
 export randomId;
 export randomChar;
 export randomBoolean;
 export randomTier;
+export createDummyDataJSON;
+export createDummyObj; 
 
